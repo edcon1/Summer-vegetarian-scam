@@ -308,6 +308,7 @@
     <Compile Include="Assets\MobileDepthWater\Scripts\Water\WaterArea.cs" />
     <Compile Include="Assets\MobileDepthWater\Scripts\Water\WaterMaterialSwitcher.cs" />
     <Compile Include="Assets\MobileDepthWater\Scripts\Water\WaterPropertyBlockSetter.cs" />
+    <Compile Include="Assets\OnClick.cs" />
     <Compile Include="Assets\PlayerMovement.cs" />
   </ItemGroup>
   <ItemGroup>

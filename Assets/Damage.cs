@@ -1,24 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Damage : MonoBehaviour {
 
-    public string DamageObject = "Trap_Needle";
-    private GameObject gameObjectOfDamage;
+    bool isdestroyed = false;
 
     // Use this for initialization
     void Start ()
     {
-        gameObjectOfDamage = GameObject.Find(DamageObject);
+
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-		if(transform.position == gameObjectOfDamage.transform.position)
-        {
-            Debug.Log("working");
-        }
+	
 	}
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Destroy(gameObject);
+        isdestroyed = true;
+
+        if(isdestroyed == true)
+        {
+            SceneManager.LoadScene("Menu screen", LoadSceneMode.Single);
+        }
+
+    }
 }
