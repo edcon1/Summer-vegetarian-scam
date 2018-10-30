@@ -8,7 +8,8 @@ public class OnClick : MonoBehaviour
 
     bool IsMouseDown = false;
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
 		
 	}
 	
@@ -21,9 +22,13 @@ public class OnClick : MonoBehaviour
     void OnMouseUp()
     {
         IsMouseDown = true;
-        if (IsMouseDown == true)
+        if(IsMouseDown == true)
         {
+            Debug.Log("working"); 
             SceneManager.LoadScene("Level 1", LoadSceneMode.Single);
         }
+        
     }
+
 }
+    
