@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 20436569492206928}
   - component: {fileID: 124436345221521262}
   - component: {fileID: 81061068739010154}
+  - component: {fileID: 54581398416801614}
   m_Layer: 0
   m_Name: PlayerCam
   m_TagString: MainCamera
@@ -154,6 +155,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1633850682324720}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &54581398416801614
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1745981190534538}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!54 &54718926412968030
 Rigidbody:
   m_ObjectHideFlags: 1
