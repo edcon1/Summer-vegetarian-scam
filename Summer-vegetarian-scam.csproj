@@ -299,6 +299,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Damage.cs" />
+    <Compile Include="Assets\EndTarget.cs" />
+    <Compile Include="Assets\LockChildGlobalTransform.cs" />
     <Compile Include="Assets\MobileDepthWater\Scripts\AnimationStarter.cs" />
     <Compile Include="Assets\MobileDepthWater\Scripts\CameraDepthSlider.cs" />
     <Compile Include="Assets\MobileDepthWater\Scripts\CameraRotator.cs" />
@@ -309,7 +311,6 @@
     <Compile Include="Assets\MobileDepthWater\Scripts\Water\WaterMaterialSwitcher.cs" />
     <Compile Include="Assets\MobileDepthWater\Scripts\Water\WaterPropertyBlockSetter.cs" />
     <Compile Include="Assets\OnClick.cs" />
-    <Compile Include="Assets\LockChildGlobalTransform.cs" />
     <Compile Include="Assets\PlayerMovement.cs" />
   </ItemGroup>
   <ItemGroup>
