@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LockGlobalTransform : MonoBehaviour
+public class LockChildGlobalTransform : MonoBehaviour
 {
     public bool lockX = false;
     public bool lockY = false;
