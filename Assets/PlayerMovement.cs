@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody rb;
     private RaycastHit hit;
+    private Vector3 rayDir;
 
     private float distToGround;
     private double collisionOffset = 0.1E-05;
@@ -29,12 +30,13 @@ public class PlayerMovement : MonoBehaviour
     {
         Physics.gravity = new Vector3 (0, gravity, 0);
         rb = GetComponent<Rigidbody>();
+        rayDir = Vector3.down;
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        Ray r = new Ray(transform.position, Vector3.down);
+        Ray r = new Ray(transform.position, rayDir);
         Physics.Raycast(r, out hit, 1000);
         distToGround = hit.distance - GetComponent<Collider>().transform.lossyScale.y;
 
@@ -56,5 +58,18 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(transform.up * gravity * (fallMagnitude - 1), ForceMode.Acceleration);
         else if (rb.velocity.y > 0 && Input.GetKey(KeyCode.Space) == false || jumpTimer >= airTime)
             rb.AddForce(transform.up * gravity * (verticalDrag - 1), ForceMode.Acceleration);
+    }
+
+    public void GravChange()
+    {
+        gravity = -gravity;
+        Physics.gravity = new Vector3(0, gravity, 0);
+
+        if (rayDir == Vector3.down)
+            rayDir = Vector3.up;
+        else
+            rayDir = Vector3.down;
+
+        jumpForce = -jumpForce;
     }
 }
