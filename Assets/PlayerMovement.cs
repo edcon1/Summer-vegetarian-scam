@@ -120,7 +120,9 @@ public class PMInspector : Editor
             new GUIContent("Invincibility Tag", "Any object with this tag will not affect players when they're invincible."), 
             pmScript.selectedTag);
 
+        // Sets the current serialised value to the inspectors value
         serialisedTag.stringValue = pmScript.selectedTag;
+        // Saves the changes?
         serializedObject.ApplyModifiedProperties();
     }
 }
