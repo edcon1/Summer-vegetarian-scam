@@ -24,15 +24,11 @@ public class Damage : MonoBehaviour {
 	}
 
     private void OnTriggerEnter(Collider other)
-    {
-        
-        if(gameObject == EndGoal)
+    {       
+        if(other.gameObject == EndGoal)
         {
             isEndGoal = true;
-            if(isEndGoal == true)
-            {
-                Debug.Log("winner");
-            }
+            Debug.Log("winner");
         }
 
         else
