@@ -21,9 +21,14 @@ public class Damage : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
+        
+        
+
+        
+
         Destroy(gameObject);
         isdestroyed = true;
-
+        
         if(isdestroyed == true)
         {
             SceneManager.LoadScene("Menu screen", LoadSceneMode.Single);
