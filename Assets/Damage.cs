@@ -7,10 +7,14 @@ public class Damage : MonoBehaviour {
 
     bool isdestroyed = false;
 
+    public string WinObject = "End Goal";
+    private GameObject EndGoal;
+    bool isEndGoal = false;
+
     // Use this for initialization
     void Start ()
     {
-
+        EndGoal = GameObject.Find(WinObject);
     }
 	
 	// Update is called once per frame
@@ -22,16 +26,25 @@ public class Damage : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         
-        
-
-        
-
-        Destroy(gameObject);
-        isdestroyed = true;
-        
-        if(isdestroyed == true)
+        if(gameObject == EndGoal)
         {
-            SceneManager.LoadScene("Menu screen", LoadSceneMode.Single);
+            isEndGoal = true;
+            if(isEndGoal == true)
+            {
+                Debug.Log("winner");
+            }
+        }
+
+        else
+        {
+
+            Destroy(gameObject);
+            isdestroyed = true;
+
+            if (isdestroyed == true)
+            {
+                SceneManager.LoadScene("Menu screen", LoadSceneMode.Single);
+            }
         }
 
     }
