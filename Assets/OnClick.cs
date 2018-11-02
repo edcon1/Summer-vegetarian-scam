@@ -5,30 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class OnClick : MonoBehaviour
 {
-
-    bool IsMouseDown = false;
-	// Use this for initialization
-	void Start ()
+    public void PlayClicked()
     {
-		
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
-
-    void OnMouseUp()
-    {
-        IsMouseDown = true;
-        if(IsMouseDown == true)
-        {
-            Debug.Log("working"); 
-            SceneManager.LoadScene("Level 1", LoadSceneMode.Single);
-        }
-        
+        SceneManager.LoadScene("Level 1", LoadSceneMode.Single);
     }
 
+    public void ExitClicked()
+    {
+        Application.Quit();
+    }
+
+    public void HighScoreClicked()
+    {
+        SceneManager.LoadScene("HighScoreTable", LoadSceneMode.Single);
+    }
 }
     
