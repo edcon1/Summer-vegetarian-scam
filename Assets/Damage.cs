@@ -25,10 +25,10 @@ public class Damage : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {       
-        if(other.gameObject == EndGoal)
+         if(other.gameObject == EndGoal)
         {
-            isEndGoal = true;
-            Debug.Log("winner");
+
+            SceneManager.LoadScene("Level 2", LoadSceneMode.Single); 
         }
 
         else
