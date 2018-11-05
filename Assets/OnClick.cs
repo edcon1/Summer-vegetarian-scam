@@ -19,5 +19,10 @@ public class OnClick : MonoBehaviour
     {
         SceneManager.LoadScene("HighScoreTable", LoadSceneMode.Single);
     }
+
+    public void BackClicked()
+    {
+        SceneManager.LoadScene("Menu screen", LoadSceneMode.Single);
+    }
 }
     
