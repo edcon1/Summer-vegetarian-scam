@@ -38,7 +38,7 @@ public class Damage : MonoBehaviour {
         }
          else if(other.gameObject.tag == "DoubleJump")
         {
-            Debug.Log("Hit");
+            
         }
         else
         {

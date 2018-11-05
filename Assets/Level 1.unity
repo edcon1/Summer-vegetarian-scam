@@ -1184,7 +1184,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4855604331496176, guid: 685ad270eba6caa468d9b4971bb7db63, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 13.4
+      value: 15.1
       objectReference: {fileID: 0}
     - target: {fileID: 4855604331496176, guid: 685ad270eba6caa468d9b4971bb7db63, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1232,7 +1232,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4855604331496176, guid: 685ad270eba6caa468d9b4971bb7db63, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 13.4
+      value: 15.1
       objectReference: {fileID: 0}
     - target: {fileID: 4855604331496176, guid: 685ad270eba6caa468d9b4971bb7db63, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3511,6 +3511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WinObject: End Goal
+  PowerUps: doubleJump
 --- !u!1001 &797862570
 Prefab:
   m_ObjectHideFlags: 0
