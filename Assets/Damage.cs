@@ -11,10 +11,16 @@ public class Damage : MonoBehaviour {
     private GameObject EndGoal;
     bool isEndGoal = false;
 
+
+    public string PowerUps = "doubleJump";
+    private GameObject DoubleJump;
+    PowerNode PowerNode;
+   
     // Use this for initialization
     void Start ()
     {
         EndGoal = GameObject.Find(WinObject);
+
     }
 	
 	// Update is called once per frame
@@ -30,7 +36,10 @@ public class Damage : MonoBehaviour {
 
             SceneManager.LoadScene("Level 2", LoadSceneMode.Single); 
         }
-
+         else if(other.gameObject.tag == "DoubleJump")
+        {
+            Debug.Log("Hit");
+        }
         else
         {
 
