@@ -300,6 +300,9 @@
   <ItemGroup>
     <Compile Include="Assets\Damage.cs" />
     <Compile Include="Assets\EndTarget.cs" />
+    <Compile Include="Assets\FinalPlayerScore.cs" />
+    <Compile Include="Assets\GlobalScript.cs" />
+    <Compile Include="Assets\GO_Script.cs" />
     <Compile Include="Assets\HS_Script.cs" />
     <Compile Include="Assets\LockChildGlobalTransform.cs" />
     <Compile Include="Assets\MobileDepthWater\Scripts\AnimationStarter.cs" />

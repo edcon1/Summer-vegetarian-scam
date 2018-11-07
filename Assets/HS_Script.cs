@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -31,15 +32,15 @@ public class HS_Script : MonoBehaviour
     private Score[] table = new Score[10];
     private List<Text> scoreText = new List<Text>();
 
-    private string scoreBoard = "HS1_";
+    private string scoreBoard = GlobalScript.HS_Tag;
     private string pTag;
     private string sTag;
 
     // On start, checks if an existing highscore table is saved. If so, load the score table. If not, create a blank HStable.
     void Awake()
     {
-        pTag = scoreBoard + "player";
-        sTag = scoreBoard + "score";
+        pTag = scoreBoard + GlobalScript.NameHS_Tag;
+        sTag = scoreBoard + GlobalScript.ScoreHS_Tag;
 
         float existCheck;
         existCheck = PlayerPrefs.GetFloat(sTag + 0, float.NaN);
@@ -48,11 +49,16 @@ public class HS_Script : MonoBehaviour
             InitialiseHS();
         else
             LoadTable();
+
+        if (GlobalScript.InputName != null)
+            AddScore();
     }
 
     private void OnEnable()
     {
         DrawTable();
+        //StartCoroutine(testDraw());
+        // testing
     }
 
     void OnDisable()
@@ -60,27 +66,49 @@ public class HS_Script : MonoBehaviour
         SaveTable();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.D) && Input.GetKeyDown(KeyCode.E) && Input.GetKeyDown(KeyCode.L))
+        {
+            InitialiseHS();
+            SceneManager.LoadScene("Menu screen", LoadSceneMode.Single);
+        }
+    }
+
+
+
     // Returns the highscore table as a list.
     public Score[] ScoreTable()
     {
         return table;
     }
-
-    /// <summary>
-    /// Checks to see if a score made it onto the highscore table.
-    /// </summary>
-    /// <param name="newScore"></param>
-    public void EvalScore(float newScore)
-    {
-        if (table[9].playerScore < newScore)
-        {
-            // Run Gameover Screen.
-            // Player enters their name.
-            // new Score replaces the 10th highscore.
-            // Sort table.
-        }
-    }
     
+    public void AddScore()
+    {
+        Score[] sortedTable = new Score[10];
+        int? fS = GlobalScript.FinalScore;
+        
+        for (int i = 0; i < 10; ++i)
+        {
+            if (fS != null)
+            {
+                if (fS <= table[i].playerScore)
+                    sortedTable[i] = table[i];
+                else
+                {
+                    sortedTable[i] = new Score(GlobalScript.InputName, (float)fS);
+                    fS = null;
+                }
+            }
+            else
+                sortedTable[i] = table[i - 1];
+        }
+
+        table = sortedTable;
+        GlobalScript.InputName = null;
+        GlobalScript.FinalScore = 0;
+    }
+
     /// <summary>
     /// Draws the HS table to the screen.
     /// </summary>
@@ -103,7 +131,7 @@ public class HS_Script : MonoBehaviour
     private void InitialiseHS()
     {
         string pName;
-
+        
         for (int i = 0; i < 10; ++i)
         {
             pName = "Player " + i;
@@ -175,5 +203,11 @@ public class HS_Script : MonoBehaviour
         tRef.transform.position = new Vector3(xPos - stringLength / 2, backgroundHS.GetComponent<RectTransform>().rect.height - (tableFromTop + tableSpacing * i));
 
         scoreText.Add(tRef);
+    }
+
+    private IEnumerator testDraw()
+    {
+        yield return new WaitForEndOfFrame();
+        DrawTable();
     }
 }
