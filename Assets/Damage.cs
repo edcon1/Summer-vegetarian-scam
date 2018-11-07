@@ -40,6 +40,10 @@ public class Damage : MonoBehaviour {
         {
             
         }
+        else if(other.gameObject.tag == "coin")
+        {
+
+        }
         else
         {
 

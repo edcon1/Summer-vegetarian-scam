@@ -298,8 +298,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\coin.cs" />
     <Compile Include="Assets\Damage.cs" />
     <Compile Include="Assets\EndTarget.cs" />
+    <Compile Include="Assets\jumpstopper.cs" />
     <Compile Include="Assets\LockChildGlobalTransform.cs" />
     <Compile Include="Assets\MobileDepthWater\Scripts\AnimationStarter.cs" />
     <Compile Include="Assets\MobileDepthWater\Scripts\CameraDepthSlider.cs" />
@@ -312,9 +314,13 @@
     <Compile Include="Assets\MobileDepthWater\Scripts\Water\WaterPropertyBlockSetter.cs" />
     <Compile Include="Assets\OnClick.cs" />
     <Compile Include="Assets\PlayerMovement.cs" />
+    <Compile Include="Assets\playerScore.cs" />
     <Compile Include="Assets\PowerNode.cs" />
+    <Compile Include="Assets\scoreIncrease.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Japanese Coin\Environment\HDR_Readme.txt" />
+    <None Include="Assets\Japanese Coin\hello there.txt" />
     <None Include="Assets\MobileDepthWater\Shaders\WaterOpaque\Depth\DiffuseColorDepthWater.shader" />
     <None Include="Assets\MobileDepthWater\Shaders\WaterOpaque\Depth\DiffuseDepthWater.shader" />
     <None Include="Assets\MobileDepthWater\Shaders\WaterOpaque\DiffuseWaterOpaque.shader" />
