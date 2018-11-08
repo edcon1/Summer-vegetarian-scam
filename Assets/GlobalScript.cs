@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public static class GlobalScript
 {
     public static string InputName;
-    public static int FinalScore = 0;
+    public static float TempScore = 0;
     public static bool FirstStart = false;
 
     private static string highScoreTableTag = "HS1_";

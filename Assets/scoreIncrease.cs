@@ -1,36 +1,38 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class scoreIncrease : MonoBehaviour {
+public class scoreIncrease : MonoBehaviour
+{
+    private Text scoreDisplay;
+    private float currentScore;
+    [Tooltip("How many points the player gets per second.")]
+    public int pointsPS = 10;
+    public int pointsPerCoin = 20;
 
-    public Transform player;
-    public Text scoreTxt;
-    int currentScore = 0;
-
-    public string playerName = "player";
-    private GameObject playerCollider;
-
-    void StartUp()
+    private void Start()
     {
-        playerCollider = GameObject.Find(playerName);
+        scoreDisplay = GameObject.Find("scoreTxt").GetComponent<Text>();
+        currentScore = GlobalScript.TempScore;
     }
-    
-    
+
+    private void OnDisable()
+    {
+        GlobalScript.TempScore = currentScore;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        currentScore = currentScore + 1;
-
-        scoreTxt.text = "Score: " + currentScore;
-
+        currentScore += Time.deltaTime * pointsPS;
+        scoreDisplay.text = "Score: " + (int)currentScore;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject == playerCollider)
+        if(other.gameObject.tag == "coin")
         {
-            currentScore = currentScore + 50;
+            currentScore += pointsPerCoin;
+            other.gameObject.SetActive(false);
         }
     }
 }

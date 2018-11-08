@@ -9,6 +9,8 @@ public class FinalPlayerScore : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        GetComponent<Text>().text = GlobalScript.FinalScore.ToString();
+        int score = (int)GlobalScript.TempScore;
+
+        GetComponent<Text>().text = score.ToString();
 	}
 }

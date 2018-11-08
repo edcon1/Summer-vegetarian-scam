@@ -90,7 +90,7 @@ public class HS_Script : MonoBehaviour
     public void AddScore()
     {
         Score[] sortedTable = new Score[10];
-        int? fS = GlobalScript.FinalScore;
+        int? fS = (int)GlobalScript.TempScore;
         
         for (int i = 0; i < 10; ++i)
         {
@@ -110,7 +110,7 @@ public class HS_Script : MonoBehaviour
 
         table = sortedTable;
         GlobalScript.InputName = null;
-        GlobalScript.FinalScore = 0;
+        GlobalScript.TempScore = 0;
     }
 
     /// <summary>

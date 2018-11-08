@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 224674785893706746}
   - component: {fileID: 33011913876864910}
-  - component: {fileID: 135117067089407008}
   - component: {fileID: 23655965813271016}
   - component: {fileID: 114416500201567338}
   - component: {fileID: 65456859445099592}
@@ -97,18 +96,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 0
---- !u!135 &135117067089407008
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1500773623101054}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!224 &224674785893706746
 RectTransform:
   m_ObjectHideFlags: 1
@@ -116,7 +103,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1500773623101054}
   m_LocalRotation: {x: -0.047620554, y: -0.028150635, z: -0.6934804, w: 0.71834874}
-  m_LocalPosition: {x: 0, y: 0, z: 2.2}
+  m_LocalPosition: {x: 0, y: 0, z: -4.1}
   m_LocalScale: {x: 46.742985, y: 3.416311, z: 71.55714}
   m_Children: []
   m_Father: {fileID: 0}
@@ -124,6 +111,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -6.169, y: 1.4760001, z: -88.061005}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2997.7, y: 36.1}
+  m_AnchoredPosition: {x: -1594.2, y: 32.7}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
