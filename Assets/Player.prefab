@@ -26,8 +26,6 @@ GameObject:
   - component: {fileID: 114927028690183684}
   - component: {fileID: 114196238099732018}
   - component: {fileID: 114863599898293962}
-  - component: {fileID: 114909646892931974}
-  - component: {fileID: 114065646972872320}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -74,7 +72,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1633850682324720}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 344.6, y: 9.8, z: -1.7879186}
+  m_LocalPosition: {x: -1767, y: 15.1, z: -0.15}
   m_LocalScale: {x: 4.08829, y: 7, z: 2.779969}
   m_Children:
   - {fileID: 4094677937561660}
@@ -180,17 +178,6 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1745981190534538}
   m_Enabled: 1
---- !u!114 &114065646972872320
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1633850682324720}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114109605984448536
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -225,19 +212,6 @@ MonoBehaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1633850682324720}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fa3c021905745a4cac7961b27383832, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WinObject: End Goal
-  PowerUps: doubleJump
---- !u!114 &114909646892931974
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1633850682324720}
-  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fa3c021905745a4cac7961b27383832, type: 3}
   m_Name: 

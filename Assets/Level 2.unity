@@ -11935,8 +11935,6 @@ GameObject:
   - component: {fileID: 1388918048}
   - component: {fileID: 1388918047}
   - component: {fileID: 1388918046}
-  - component: {fileID: 1388918052}
-  - component: {fileID: 1388918053}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -12057,32 +12055,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1388918052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114909646892931974, guid: 685ad270eba6caa468d9b4971bb7db63,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1388918045}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fa3c021905745a4cac7961b27383832, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WinObject: End Goal
-  PowerUps: doubleJump
---- !u!114 &1388918053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114065646972872320, guid: 685ad270eba6caa468d9b4971bb7db63,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1388918045}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f406459102b8232429df3300d7e2c40d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!33 &1388918054
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -12099,7 +12071,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1388918045}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 342.8, y: 10.1, z: -1.7879186}
+  m_LocalPosition: {x: 337.1, y: 10.4, z: -1.7879186}
   m_LocalScale: {x: 4.08829, y: 7, z: 2.779969}
   m_Children:
   - {fileID: 654614845}

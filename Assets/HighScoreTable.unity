@@ -595,9 +595,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textTemplate: {fileID: 114467807386850008, guid: dfa8138248afaf64593aaf4e11aab149,
     type: 2}
-  tableFromTop: 100
+  tableFromTitle: 20
   tableSpacing: 20
   nameSpacing: 25
+  title: {fileID: 564405360}
 --- !u!4 &1078960821
 Transform:
   m_ObjectHideFlags: 0

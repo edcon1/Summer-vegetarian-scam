@@ -21,12 +21,13 @@ public class HS_Script : MonoBehaviour
 
     [Tooltip("Can drag in your own custom font for the highscore table.")]
     public Text textTemplate;
-    [Tooltip("How far the score table is positioned from the top of the screen, in pixels.")]
-    public int tableFromTop = 100;
+    [Tooltip("How far the score table is positioned from the title, in pixels.")]
+    public int tableFromTitle = 10;
     [Tooltip("This is the spacing between the ROWS of the highscore table, in pixels.")]
     public int tableSpacing = 20;
     [Tooltip("Distance between a highscore's POS and PLAYERNAME, in pixels.")]
     public int nameSpacing = 25;
+    public Text title;
 
     private Canvas backgroundHS;
     private Score[] table = new Score[10];
@@ -52,6 +53,8 @@ public class HS_Script : MonoBehaviour
 
         if (GlobalScript.InputName != null)
             AddScore();
+
+        tableFromTitle += 50;
     }
 
     private void OnEnable()
@@ -195,6 +198,7 @@ public class HS_Script : MonoBehaviour
 
     private void AddHSTextObject(string drawText, int i, int xPos)
     {
+        float titleY = title.transform.position.y;
         int stringLength;
         Text tRef;
 
@@ -204,7 +208,7 @@ public class HS_Script : MonoBehaviour
         stringLength = GetStringLength(tRef.GetComponent<Text>().text);
 
         tRef.GetComponent<Text>().rectTransform.sizeDelta = new Vector2(stringLength, textTemplate.GetComponent<Text>().fontSize + 2);
-        tRef.transform.position = new Vector3(xPos - stringLength / 2, backgroundHS.GetComponent<RectTransform>().rect.height - (tableFromTop + tableSpacing * i));
+        tRef.transform.position = new Vector3(xPos - stringLength / 2, (titleY - tableFromTitle - tableSpacing * i));
 
         scoreText.Add(tRef);
     }
