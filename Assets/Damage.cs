@@ -11,10 +11,16 @@ public class Damage : MonoBehaviour {
     private GameObject EndGoal;
     bool isEndGoal = false;
 
+
+    public string PowerUps = "doubleJump";
+    private GameObject DoubleJump;
+    PowerNode PowerNode;
+   
     // Use this for initialization
     void Start ()
     {
         EndGoal = GameObject.Find(WinObject);
+
     }
 	
 	// Update is called once per frame
@@ -24,17 +30,20 @@ public class Damage : MonoBehaviour {
 	}
 
     private void OnTriggerEnter(Collider other)
-    {
-        
-        if(gameObject == EndGoal)
+    {       
+         if(other.gameObject == EndGoal)
         {
-            isEndGoal = true;
-            if(isEndGoal == true)
-            {
-                Debug.Log("winner");
-            }
-        }
 
+            SceneManager.LoadScene("Level 2", LoadSceneMode.Single); 
+        }
+         else if(other.gameObject.tag == "DoubleJump")
+        {
+            
+        }
+        else if(other.gameObject.tag == "coin")
+        {
+
+        }
         else
         {
 
