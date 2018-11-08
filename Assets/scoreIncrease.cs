@@ -24,8 +24,6 @@ public class scoreIncrease : MonoBehaviour {
 
         scoreTxt.text = "Score: " + currentScore;
 
-        
-
     }
 
     private void OnTriggerEnter(Collider other)
