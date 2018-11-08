@@ -57,8 +57,12 @@ public class HS_Script : MonoBehaviour
     private void OnEnable()
     {
         DrawTable();
-        //StartCoroutine(testDraw());
-        // testing
+
+        if (GlobalScript.FirstStart == false)
+        {
+            GlobalScript.FirstStart = true;
+            StartCoroutine(RefreshTable());
+        }
     }
 
     void OnDisable()
@@ -127,7 +131,7 @@ public class HS_Script : MonoBehaviour
         }
     }
 
-    // Creates a blank Score table.
+    // Creates a default score table.
     private void InitialiseHS()
     {
         string pName;
@@ -205,9 +209,9 @@ public class HS_Script : MonoBehaviour
         scoreText.Add(tRef);
     }
 
-    private IEnumerator testDraw()
+    private IEnumerator RefreshTable()
     {
         yield return new WaitForEndOfFrame();
-        DrawTable();
+        SceneManager.LoadScene("HighScoreTable", LoadSceneMode.Single);
     }
 }

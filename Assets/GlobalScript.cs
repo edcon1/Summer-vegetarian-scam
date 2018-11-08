@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // This script is only for global data storage so that values can be exchanged between different scenes.
 public static class GlobalScript
 {
     public static string InputName;
     public static int FinalScore = 0;
+    public static bool FirstStart = false;
 
     private static string highScoreTableTag = "HS1_";
     private static string playerNameTableTag = "player";
