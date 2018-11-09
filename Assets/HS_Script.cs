@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -56,17 +55,12 @@ public class HS_Script : MonoBehaviour
             AddScore();
 
         tableFromTitle += 50;
+
     }
 
     private void OnEnable()
     {
         DrawTable();
-
-        if (GlobalScript.FirstStart == false)
-        {
-            GlobalScript.FirstStart = true;
-            StartCoroutine(RefreshTable());
-        }
     }
 
     void OnDisable()
@@ -76,6 +70,8 @@ public class HS_Script : MonoBehaviour
 
     private void Update()
     {
+        Canvas.ForceUpdateCanvases();
+
         if (Input.GetKeyDown(KeyCode.D) && Input.GetKeyDown(KeyCode.E) && Input.GetKeyDown(KeyCode.L))
         {
             InitialiseHS();
@@ -180,43 +176,26 @@ public class HS_Script : MonoBehaviour
     }
 
     // Gets the length of a string in pixels
-    private int GetStringLength(string text)
+    private int GetStringLength(string newText)
     {
-        int totalPixelLength = 0;
-        char[] letterArray = text.ToCharArray();
-
-        Font f = textTemplate.GetComponent<Text>().font;
-        CharacterInfo ci = new CharacterInfo();
-
-        foreach (char c in letterArray)
-        {
-            f.GetCharacterInfo(c, out ci, textTemplate.GetComponent<Text>().fontSize);
-            totalPixelLength += ci.advance;
-        }
-
-        return totalPixelLength;
+        textTemplate.text = newText;
+        return (int)textTemplate.preferredWidth;
     }
 
     private void AddHSTextObject(string drawText, int i, int xPos)
     {
         float titleY = title.transform.position.y;
-        int stringLength;
+        float stringLength;
         Text tRef;
 
         tRef = Instantiate(textTemplate, backgroundHS.transform, true);
-        tRef.GetComponent<Text>().text = drawText;
 
-        stringLength = GetStringLength(tRef.GetComponent<Text>().text);
+        tRef.GetComponent<Text>().text = drawText;
+        stringLength = tRef.preferredWidth;
 
         tRef.GetComponent<Text>().rectTransform.sizeDelta = new Vector2(stringLength, textTemplate.GetComponent<Text>().fontSize + 2);
         tRef.transform.position = new Vector3(xPos - stringLength / 2, (titleY - tableFromTitle - tableSpacing * i));
 
         scoreText.Add(tRef);
-    }
-
-    private IEnumerator RefreshTable()
-    {
-        yield return new WaitForEndOfFrame();
-        SceneManager.LoadScene("HighScoreTable", LoadSceneMode.Single);
     }
 }

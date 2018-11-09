@@ -8,7 +8,6 @@ public static class GlobalScript
 {
     public static string InputName;
     public static float TempScore = 0;
-    public static bool FirstStart = false;
 
     private static string highScoreTableTag = "HS1_";
     private static string playerNameTableTag = "player";
